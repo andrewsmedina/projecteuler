@@ -4,12 +4,6 @@ main :: IO()
 main = do hspec specs
 
 specs = describe "problem 3" [
-    it "the isFactor returns True when the number is factor"
-        (isFactor 2 4),
-
-    it "the isFactor returns False when the number is not factor"
-        (not (isFactor 3 4)),
-
     it "the primeFactor for 4, is [2,2]"
         (primeFactor 4 == [2,2]),
 
@@ -32,7 +26,6 @@ specs = describe "problem 3" [
 		(maximum [x | x <- primeFactor 600851475143] == 6857)
     ]
 
-isFactor x y = y `mod` x == 0
 primeFactor n = primeFactor' n 2 where
 	primeFactor' n factor
 		| factor * factor > n = [n]
